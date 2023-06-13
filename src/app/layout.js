@@ -1,5 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Navigation from '@/components/navigation'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,7 +12,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+
+      <head>
+        <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css" />
+      </head>
+
+      <body className={inter.className}>
+        <Navigation />
+
+        <div className="container p-4">
+          {children}
+        </div>
+      </body>
+
     </html>
   )
 }
